@@ -15,19 +15,29 @@ project 1 - A Random Quote Generator
   Use console.log() to log your array of quotes to the console.
 ***/
 let quotes = [
-  {quote:'Optimism, pessimism, f*ck that – we’re going to make it happen.
-
-  ', source: 'Elon Musk', citation:'WIRED Magazine'  , year: 2008},
+  {quote:'Optimism, pessimism, f*ck that – we’re going to make it happen.', source: 'Elon Musk', citation:'WIRED Magazine'  , year: 2008},
+  {quote:"Preservation of one's own culture does not require contempt or disrespect for other cultures.", source: 'Cesar Chavez', citation:'Huffington Post'  ,},
+  {quote:'If you wanna change the world, start off by making your bed.', source: 'US Navy Admiral, William H. McRaven', citation:'University of Texas at Austin, Commencement Address'  , year: 2014},
+  {quote:'My fellow Americans, we are and always will be a nation of immigrants.', source: 'Barack Obama', citation:'White House Archives'  , year: 2014},
+  {quote: "I’ve wrestled with alligators. I’ve tussled with a whale. I done handcuffed lightning. And throw thunder in jail.", source: 'Muhammad Ali', citation:'History Channel'  , year: 1974},
+  
 ];
 
-console.log(quotes);
+// console.log(quotes[4].quote);
+// console.log(quotes[4].source);
+// console.log(quotes[4].citation);
+// console.log(quotes[4].year);
 
 /***
   Create the `getRandomQuote` function to:
    - Create a variable to store a random number 
    - Cse the random number to `return` a random quote object from the `quotes` array.
 ***/
-
+function getRandomQuote(){
+ let randomNumber = Math.floor(Math.random()*quotes.length);
+ randomNumber = quotes[randomNumber];
+return randomNumber;
+}
 
 
 
@@ -43,6 +53,18 @@ console.log(quotes);
    - Don't forget to close that final `p` tag.
    - Set the `innerHTML` of the `quote-box` div to the HTML string. 
 ***/
+let message = '';
+function printQuote(){
+  let print = getRandomQuote(quotes);
+    message = '<p class="quote">'+print.quote+ '</p>';
+    message +='<p class="source">' +print.source;
+   // message += '<span class="citation">'+ print.citation+' </span>';
+   // message += '<span class="year">'+print.year+'</span>';
+    message += '</p>';
+  
+}
+let outputDiv = document.getElementById('quote-box');
+outputDiv.innerHTML= message;
 
 
 
