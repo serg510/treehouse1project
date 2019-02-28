@@ -17,7 +17,7 @@ project 1 - A Random Quote Generator
 let quotes = [
   {quote:'Optimism, pessimism, f*ck that – we’re going to make it happen.', source: 'Elon Musk', citation:'WIRED Magazine'  , year: 2008},
   {quote:"Preservation of one's own culture does not require contempt or disrespect for other cultures.", source: 'Cesar Chavez', citation:'Huffington Post' },
-  {quote:'If you wanna change the world, start off by making your bed.', source: 'US Navy Admiral, William H. McRaven', citation:'University of Texas at Austin, Commencement Address'  , year: 2014},
+  {quote:'If you wanna change the world, start off by making your bed.', source: 'US Navy Admiral, William H. McRaven', citation:'University of Texas at Austin Commencement Address'  , year: 2014},
   {quote:'My fellow Americans, we are and always will be a nation of immigrants.', source: 'Barack Obama', citation:'White House Archives'  , year: 2014},
   {quote: "I’ve wrestled with alligators. I’ve tussled with a whale. I done handcuffed lightning. And throw thunder in jail.", source: 'Muhammad Ali', year: 1974},
   
@@ -39,8 +39,9 @@ function getRandomQuote(){
 return randomNumber;
 }
 
-
-
+var imagesArray = [
+  "001.jpg", "002.jpg", "003.jpg", "004.jpg",
+  "005.jpg"];
 /***
   Create the `printQuote` function to: 
    - Call the `getRandomQuote` function and assign it to a variable.
@@ -58,16 +59,24 @@ function printQuote(){
   let print = getRandomQuote(quotes);
     message = '<p class="quote">'+print.quote+ '</p>';
     message +='<p class="source">' +print.source;
-   // message += '<span class="citation">'+ print.citation+' </span>';
-   // message += '<span class="year">'+print.year+'</span>';
+    message += '<span class="citation">'+ print.citation+' </span>';
+    message += '<span class="year">'+print.year+'</span>';
     message += '</p>';
-  
+    let outputDiv = document.getElementById('quote-box');
+    outputDiv.innerHTML= message;
 }
-let outputDiv = document.getElementById('quote-box');
-outputDiv.innerHTML= message;
+
+function randomImage(){
+var randomItem = imagesArray[Math.floor(Math.random()*imagesArray.length)];
+console.log(randomItem)
+
+  
+ 
+
+}
 
 printQuote();
-
+randomImage();
 
 /***
   When the "Show another quote" button is clicked, the event listener 
