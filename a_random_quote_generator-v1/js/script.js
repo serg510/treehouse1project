@@ -46,7 +46,7 @@ let color = "rgb(" +x+","+y+","+z+")";   ///<<---code from w3resource.com
 //console.log(color); 
 document.body.style.background= color
 }
-const autoChangeQuote = window.setInterval(printQuote, 4000);
+const autoChangeQuote = window.setInterval(printQuote, 4000);  //<<<---code from MDZ.org
 
 
 printQuote();
