@@ -8,9 +8,7 @@ body {
   background-color: #36b55c;
   color: white;
   font-family: 'Playfair Display', serif;
-  background-size:cover;
-  background-position:center;
-  
+     
 }
 
 #quote-box {
@@ -73,6 +71,7 @@ body {
 .year:before {
   content: ", ";
   font-style: normal;
+  
 }
 
 #loadQuote {
@@ -81,7 +80,7 @@ body {
   display: inline-block;
   left: 50%;
   margin-left: -6em;
-  bottom: 10%;
+  bottom: 150px;
   border-radius: 4px;
   border: 2px solid #fff;
   color: #fff;
