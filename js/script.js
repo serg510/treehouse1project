@@ -14,9 +14,13 @@ project 1 - A Random Quote Generator
   Add the `year` property to at least one object in the array.
   Use console.log() to log your array of quotes to the console.
 ***/
+let quotes = [
+  {quote:'Optimism, pessimism, f*ck that – we’re going to make it happen.
 
+  ', source: 'Elon Musk', citation:'WIRED Magazine'  , year: 2008},
+];
 
-
+console.log(quotes);
 
 /***
   Create the `getRandomQuote` function to:
