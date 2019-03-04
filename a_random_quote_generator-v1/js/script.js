@@ -4,11 +4,11 @@ project 1 - A Random Quote Generator
 ******************************************/
 
 let quotes = [
-  {quote:'Optimism, pessimism, f*ck that – we’re going to make it happen.', source: 'Elon Musk', citation:'WIRED Magazine', year: 2008},
-  {quote:"Preservation of one's own culture does not require contempt or disrespect for other cultures.", source: 'Cesar Chavez'},
-  {quote:'If you wanna change the world, start off by making your bed.', source: 'US Navy Admiral, William H. McRaven', citation:'University of Texas at Austin Commencement Address', year: 2014},
-  {quote:'My fellow Americans, we are and always will be a nation of immigrants.', source:'Barack Obama', citation:'White House Archives', year: 2014},
-  {quote: "I’ve wrestled with alligators. I’ve tussled with a whale. I done handcuffed lightning. And throw thunder in jail.", source: 'Muhammad Ali', year: 1974},
+  {quote:'Optimism, pessimism, f*ck that – we’re going to make it happen.', source: 'Elon Musk', citation:'WIRED Magazine', year: 2008,Tags:'Technology'},
+  {quote:"Preservation of one's own culture does not require contempt or disrespect for other cultures.", source: 'Cesar Chavez',Tags:'History'},
+  {quote:'If you wanna change the world, start off by making your bed.', source: 'US Navy Admiral, William H. McRaven', citation:'University of Texas at Austin Commencement Address', year: 2014,Tags:'Military'},
+  {quote:'My fellow Americans, we are and always will be a nation of immigrants.', source:'Barack Obama', citation:'White House Archives', year: 2014,Tags:'Politics'},
+  {quote: "I’ve wrestled with alligators. I’ve tussled with a whale. I done handcuffed lightning. And throw thunder in jail.", source: 'Muhammad Ali', year: 1974,Tags:'Sports'},
   
 ];
 
@@ -31,6 +31,7 @@ function printQuote(){
     if(print.hasOwnProperty('year')){
     message += '<span class="year">'+print.year+'</span>';
     }
+    message +='<p class="source">' +print.Tags;
     message += '</p>';
     let outputDiv = document.getElementById('quote-box');
     outputDiv.innerHTML= message;
