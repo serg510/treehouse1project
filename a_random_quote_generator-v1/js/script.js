@@ -2,7 +2,7 @@
 Treehouse FSJS Techdegree:
 project 1 - A Random Quote Generator
 ******************************************/
-
+///an array of obects that include object properties and keys 
 let quotes = [
   {quote:'Optimism, pessimism, f*ck that – we’re going to make it happen.', source: 'Elon Musk', citation:'WIRED Magazine', year: 2008,Tags:'Technology'},
   {quote:"Preservation of one's own culture does not require contempt or disrespect for other cultures.", source: 'Cesar Chavez',Tags:'History'},
@@ -12,14 +12,16 @@ let quotes = [
   
 ];
 
-
+//Get a random number and it attaches to the array index then returns that 
+//value 
 function getRandomQuote(){
  let randomNumber = Math.floor(Math.random()*quotes.length);
  randomNumber = quotes[randomNumber];
 return randomNumber;
 }
 
-
+// function to print to screen the random object 
+// the random colors function is also included
 let message = '';
 function printQuote(){
   let print = getRandomQuote(quotes);
@@ -38,6 +40,7 @@ function printQuote(){
     randomcolors();
 }
 
+//random colors function 
 function randomcolors(){
 let x = [Math.floor(Math.random()*256)];
 let y = [Math.floor(Math.random()*256)];
@@ -46,6 +49,8 @@ let color = "rgb(" +x+","+y+","+z+")";   ///<<---code from w3resource.com
 //console.log(color); 
 document.body.style.background= color
 }
+
+// code to change the quote on screen at a predeterminded time.
 const autoChangeQuote = window.setInterval(printQuote, 4000);  //<<<---code from MDZ.org
 
 
