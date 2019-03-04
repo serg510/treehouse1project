@@ -25,14 +25,13 @@ function printQuote(){
   let print = getRandomQuote(quotes);
     message = '<p class="quote">'+print.quote+ '</p>';
     message +='<p class="source">' +print.source;
-    if(print.hasOwnProperty('citation')){
-    message += '<span class="citation">'+ print.citation+' </span>';
-    message += '</p>';
-    };
+    if(print.hasOwnProperty('citation')){  ///<<---help from MDZ.ORG
+    message += '<span class="citation">'+ print.citation+'</span>';    
+    };                                                                  
     if(print.hasOwnProperty('year')){
     message += '<span class="year">'+print.year+'</span>';
+    }
     message += '</p>';
-  }
     let outputDiv = document.getElementById('quote-box');
     outputDiv.innerHTML= message;
     randomcolors();
